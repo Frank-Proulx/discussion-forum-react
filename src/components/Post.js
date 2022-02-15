@@ -12,19 +12,19 @@ class Post extends React.Component {
   }
   
   toggleDetailMode = () => {
-    this.setState(prevState, () => {
+    this.setState(prevState => ({
       detailMode: !prevState.detailMode
-    });
+    }));
   }
   
   render() {
-    const timestamp = `${props.post.timestamp.toDateString()} ${props.post.timestamp.getHours()}:${props.post.timestamp.getMinutes()}:${props.post.timestamp.getSeconds()}`;
+    const timestamp = `${this.props.post.timestamp.toDateString()} ${this.props.post.timestamp.getHours()}:${this.props.post.timestamp.getMinutes()}:${this.props.post.timestamp.getSeconds()}`;
 
     return(
       <React.Fragment>
         <div>
           {/* button(s?) to upvote or downvote */}
-          <h2>{props.post.votes} {props.post.title}</h2><p> - <em>{timestamp}</em></p>
+          <h2>{this.props.post.votes} {this.props.post.title}</h2><p> - <em>{timestamp}</em></p>
           <ReadHideButton detailsVisible={this.state.detailMode}
             clickFunc={this.toggleDetailMode}/>
         </div>
@@ -33,7 +33,7 @@ class Post extends React.Component {
   }
 }
 
-Post.proptypes = {
+Post.propTypes = {
   id: PropTypes.string,
   timestamp: PropTypes.object,
   title: PropTypes.string,

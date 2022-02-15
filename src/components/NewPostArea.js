@@ -1,22 +1,30 @@
 import React from 'react';
 import NewPostForm from './NewPostForm';
-import {connect} from 'react-redux';
+import PostButton from './PostButton';
 
-function NewPostArea(props) {
-  const postForm = (props.showForm) ? <NewPostForm /> : <PostButton />;
+class NewPostArea extends React.Component {
+  
+  constructor(props) {
+    super(props);
+    this.state = {
+      showForm: false
+    }
+  }
 
-  return (
-    <React.Fragment>
-      {postForm}
-    </React.Fragment>
-  )
+  toggleForm() {
+    this.setState(prevState => ({
+      showForm: !prevState.showForm
+    }));
+  }
+
+  render() {
+    const postAreaContent = (this.state.showForm) ? <NewPostForm toggleFunc={this.toggleForm} /> : <PostButton toggleFunc={this.toggleForm} />;
+    return (
+      <React.Fragment>
+        {postAreaContent}
+      </React.Fragment>
+    )
+  }
 }
-
-const mapStateToProps = state => {
-  showForm = state.isPosting
-}
-
-NewPostArea = connect(mapStateToProps)(NewPostArea);
 
 export default NewPostArea;
-

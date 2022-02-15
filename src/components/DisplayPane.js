@@ -1,5 +1,6 @@
 import React from 'react';
 import NewPostArea from './NewPostArea';
+import Post from './Post';
 import {v4} from 'uuid';
 import {connect} from 'react-redux';
 
@@ -18,20 +19,20 @@ function DisplayPane(props) {
 const sortPosts = (posts, sortMethod) => {
   let compareFunc = null;
   switch (sortMethod) {
-    case "votesAscending" :
+    case "Hated":
       compareFunc = (obj1, obj2) => (obj1.votes > obj2.votes) ? -1 : 1;
       break;
-    case "votesDescending" :
+    case "Popular":
       compareFunc = (obj1, obj2) => (obj1.votes < obj2.votes) ? -1 : 1;
       break;
-    case "dateAscending" :
+    case "Oldest":
       compareFunc = (obj1, obj2) => (obj1.timestamp.getTime() > obj2.timestamp.getTime()) ? -1 : 1;
       break;
-    case "dateDescending" :
+    case "Newest":
       compareFunc = (obj1, obj2) => (obj1.timestamp.getTime() < obj2.timestamp.getTime()) ? -1 : 1;
       break;
     }
-  return Object.values(props.posts).sort(compareFunc);
+  return Object.values(posts).sort(compareFunc);
 };
 
 const mapStateToProps = state => {

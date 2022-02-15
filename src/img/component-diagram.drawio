@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="NXFrA5UINfvCZD1CqPeP" name="Page-1">
-        <mxGraphModel dx="608" dy="1124" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="608" dy="686" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -76,7 +76,7 @@
                 <mxCell id="6aiA94d-WOz0YKa8GJ7o-33" value="Oldest" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontColor=#121212;" parent="1" vertex="1">
                     <mxGeometry x="750" y="287" width="100" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="6aiA94d-WOz0YKa8GJ7o-34" value="&lt;font face=&quot;Courier New&quot;&gt;&lt;b&gt;store = {&lt;br&gt;&amp;nbsp; posts: {&lt;br&gt;&amp;nbsp; &amp;nbsp; {id = v4()&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;title: string&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;timestamp: Date object&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;votes: int&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;content: string&lt;br&gt;&amp;nbsp; &amp;nbsp; },&lt;br&gt;&lt;/b&gt;&lt;/font&gt;&lt;b style=&quot;font-family: &amp;#34;courier new&amp;#34;&quot;&gt;&amp;nbsp; &amp;nbsp; {&lt;/b&gt;&lt;b style=&quot;font-family: &amp;#34;courier new&amp;#34;&quot;&gt;id = v4()&lt;/b&gt;&lt;b style=&quot;font-family: &amp;#34;courier new&amp;#34;&quot;&gt;&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;title: string&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;timestamp: Date object&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;votes: int&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;content: string&lt;br&gt;&lt;/b&gt;&lt;font face=&quot;Courier New&quot;&gt;&lt;b&gt;&amp;nbsp; &amp;nbsp; }&lt;br&gt;&amp;nbsp; },&lt;br&gt;&amp;nbsp;sortMethod: string,&lt;br&gt;}&lt;br&gt;&lt;br&gt;state(NewPostArea) = {&lt;br&gt;&amp;nbsp; isPosting: true&lt;br&gt;}&lt;br&gt;&lt;br&gt;state(Post) = {&lt;br&gt;&amp;nbsp; detailMode: true&lt;br&gt;}&lt;br&gt;&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;fontColor=#121212;strokeColor=#0F0F0F;fillColor=#808080;align=left;" parent="1" vertex="1">
+                <mxCell id="6aiA94d-WOz0YKa8GJ7o-34" value="&lt;font face=&quot;Courier New&quot;&gt;&lt;b&gt;store = {&lt;br&gt;&amp;nbsp; posts: {&lt;br&gt;&amp;nbsp; &amp;nbsp; {id = v4()&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;title: string&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;timestamp: Date object&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;votes: int&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;content: string&lt;br&gt;&amp;nbsp; &amp;nbsp; },&lt;br&gt;&lt;/b&gt;&lt;/font&gt;&lt;b style=&quot;font-family: &amp;#34;courier new&amp;#34;&quot;&gt;&amp;nbsp; &amp;nbsp; {&lt;/b&gt;&lt;b style=&quot;font-family: &amp;#34;courier new&amp;#34;&quot;&gt;id = v4()&lt;/b&gt;&lt;b style=&quot;font-family: &amp;#34;courier new&amp;#34;&quot;&gt;&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;title: string&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;timestamp: Date object&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;votes: int&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;content: string&lt;br&gt;&lt;/b&gt;&lt;font face=&quot;Courier New&quot;&gt;&lt;b&gt;&amp;nbsp; &amp;nbsp; }&lt;br&gt;&amp;nbsp; },&lt;br&gt;&amp;nbsp;sortMethod: string&lt;br&gt;}&lt;br&gt;&lt;br&gt;state(NewPostArea) = {&lt;br&gt;&amp;nbsp; isPosting: true&lt;br&gt;}&lt;br&gt;&lt;br&gt;state(Post) = {&lt;br&gt;&amp;nbsp; detailMode: true&lt;br&gt;}&lt;br&gt;&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;fontColor=#121212;strokeColor=#0F0F0F;fillColor=#808080;align=left;" parent="1" vertex="1">
                     <mxGeometry x="320" y="540" width="340" height="600" as="geometry"/>
                 </mxCell>
                 <mxCell id="6aiA94d-WOz0YKa8GJ7o-36" value="" style="rounded=0;whiteSpace=wrap;html=1;fontColor=#121212;strokeColor=#1F1F1F;fillColor=#FFFFFF;" parent="1" vertex="1">
@@ -181,17 +181,9 @@
                 <mxCell id="38" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=10;" parent="1" vertex="1">
                     <mxGeometry x="750" y="85" width="30" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="39" value="UpDownVoteButtons" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="39" value="UpDownVoteButtons" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="200" y="440" width="350" height="60" as="geometry"/>
                 </mxCell>
-            </root>
-        </mxGraphModel>
-    </diagram>
-    <diagram id="hGtZvAOgaSYX6OxF87A_" name="Page-1">
-        <mxGraphModel dx="618" dy="627" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
-            <root>
-                <mxCell id="0"/>
-                <mxCell id="1" parent="0"/>
             </root>
         </mxGraphModel>
     </diagram>
