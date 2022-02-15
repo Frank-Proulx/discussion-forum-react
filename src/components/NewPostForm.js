@@ -1,11 +1,11 @@
 import React from 'react';
 
-function Header() {
-  return(
+function NewPostForm() {
+  return (
     <React.Fragment>
 
     </React.Fragment>
   )
 }
 
-export default Header;
+export default NewPostForm;
