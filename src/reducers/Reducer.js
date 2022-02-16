@@ -34,6 +34,6 @@ export default (state = {}, action) => {
         }
       });
     default:
-      return {posts: {}, sortMethod: "Popular"};
+      return {posts: {}, sortMethod: "Most Popular"};
   }
 }

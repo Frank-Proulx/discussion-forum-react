@@ -1,24 +1,22 @@
 import React from 'react';
-import {v4} from 'uuid';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
+import * as a from './../actions';
+import Button from 'react-bootstrap/Button';
 
 function NewPostForm(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const {dispatch} = props;
-    const action = {
-      type: "ADD_POST",
-      id: v4(),
-      title: event.target.title.value,
-      timestamp: new Date(),
-      votes: 0,
-      content: event.target.content.value
-    }
+    const action = a.addPost(event);
     dispatch(action);
     props.toggleFunc();
   };
+
+  const submitButtonStyle = {
+    margin: ".25em"
+  }
 
   return (
     <React.Fragment>
@@ -27,8 +25,8 @@ function NewPostForm(props) {
         <br/>
         <textarea name="content" placeholder="type your post here..." required />
         <br/>
-        <button type="submit">Submit Post!</button>
-        <button type="button" onClick={props.toggleFunc}>Cancel</button>
+        <Button type="submit" className="btn-success" style={submitButtonStyle}>Submit Post!</Button>
+        <button type="button" onClick={props.toggleFunc} className="btn btn-secondary" style={submitButtonStyle}>Cancel</button>
       </form>
     </React.Fragment>
   )

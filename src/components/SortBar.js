@@ -4,7 +4,7 @@ import {v4} from 'uuid';
 
 function SortBar() {
 
-  const buttons = ["Popular", "Hated", "Newest", "Oldest"]
+  const buttons = ["Most Popular", "Least Popular", "Newest", "Oldest"]
   return (
     <React.Fragment>
       {buttons.map(b => 

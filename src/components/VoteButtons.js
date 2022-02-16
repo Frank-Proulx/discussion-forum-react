@@ -1,20 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import upArrow from '../img/upArrow.png'
-import downArrow from '../img/downArrow.png'
+import upArrow from '../img/upArrow.png';
+import downArrow from '../img/downArrow.png';
+import * as a from './../actions';
 
 function VoteButtons(props) {
 
   const voteIncrementer = (direction) => {
     const { dispatch } = props;
-    const action = {id: props.postId};
-    if (direction === "up") {
-      dispatch({...action, type: "UPVOTE_POST"});
-    } else if (direction === "down") {
-      dispatch({...action, type: "DOWNVOTE_POST"});
-    }
-  }
+    const action = a.vote(direction, props.postId);
+    dispatch(action)
+  };
 
   const voteButtonsStyles = {
     upvote: {
@@ -24,7 +21,7 @@ function VoteButtons(props) {
       display: "inline",
       marginRight: "2em"
     },
-    p: {
+    votes: {
       display: "inline",
       position: "relative",
       top: "7px",
@@ -32,7 +29,9 @@ function VoteButtons(props) {
       margin: "auto"
     },
     img: {
-      margin: ".5em"
+      margin: ".5em",
+      height: "25px",
+      width: "25px"
     }
   };
 
@@ -41,7 +40,7 @@ function VoteButtons(props) {
       <div style={voteButtonsStyles.upvote} onClick={() => voteIncrementer("up")}>
         <img style={voteButtonsStyles.img} src={upArrow} alt="vote up" />
       </div>
-      <p style={voteButtonsStyles.p}>{props.votes}</p>
+      <p style={voteButtonsStyles.votes}>{props.votes}</p>
       <div style={voteButtonsStyles.downvote} onClick={() => voteIncrementer("down")}>
       <img style={voteButtonsStyles.img} src={downArrow} alt="vote up" />
       </div>
