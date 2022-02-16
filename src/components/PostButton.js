@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function PostButton(props) {
 
@@ -6,5 +7,9 @@ function PostButton(props) {
     <button onClick={props.toggleFunc}>New Post</button>
   )
 }
+
+PostButton.propTypes = {
+  toggleFunc: PropTypes.func
+};
 
 export default PostButton;

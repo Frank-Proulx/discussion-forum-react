@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 
 function SortButton(props) {
@@ -16,6 +17,10 @@ function SortButton(props) {
     <button onClick={handleClick}>{props.sortMethod}</button>
   )
 }
+
+SortButton.propTypes = {
+  sortMethod: PropTypes.string
+};
 
 SortButton = connect()(SortButton);
 

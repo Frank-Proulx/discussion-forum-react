@@ -3,6 +3,7 @@ import NewPostArea from './NewPostArea';
 import Post from './Post';
 import {v4} from 'uuid';
 import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
 
 function DisplayPane(props) { 
   return(
@@ -42,6 +43,10 @@ const mapStateToProps = state => {
     posts: sortPosts(state.posts, state.sortMethod)
   };
 }
+
+DisplayPane.propTypes = {
+  posts: PropTypes.arrayOf(PropTypes.object).isRequired
+};
 
 DisplayPane = connect(mapStateToProps)(DisplayPane);
 

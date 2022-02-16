@@ -26,19 +26,21 @@ class Post extends React.Component {
         display: "inline"
       },
       p: {
-        display: "inline"
+        display: "inline",
+        marginRight: "2em"
       }
     };
 
     const timestamp = `${this.props.post.timestamp.toDateString()} ${this.props.post.timestamp.getHours()}:${this.props.post.timestamp.getMinutes()}:${this.props.post.timestamp.getSeconds()}`;
 
-    const content = (this.state.detailMode) ? <p>{this.props.post.content} </p> : null;
+    const content = (this.state.detailMode) ? <div><hr/><p>{this.props.post.content}</p></div> : null;
 
     return(
       <React.Fragment>
         <div style={postStyle}>
-          <VoteButtons postId={this.props.post.id}/>
-          <h2 style={postStyle.h2}>{this.props.post.votes} {this.props.post.title}</h2><p style={postStyle.p}> - <em>{timestamp}</em></p>
+          <VoteButtons postId={this.props.post.id}
+            votes={this.props.post.votes} />
+          <h2 style={postStyle.h2}>{this.props.post.title}</h2><p style={postStyle.p}> - <em>{timestamp}</em></p>
           <ReadHideButton detailsVisible={this.state.detailMode}
             clickFunc={this.toggleDetailMode} />
           {content}
@@ -49,11 +51,7 @@ class Post extends React.Component {
 }
 
 Post.propTypes = {
-  id: PropTypes.string,
-  timestamp: PropTypes.object,
-  title: PropTypes.string,
-  votes: PropTypes.number,
-  content: PropTypes.string
-}
+  post: PropTypes.object.isRequired
+};
 
 export default Post;

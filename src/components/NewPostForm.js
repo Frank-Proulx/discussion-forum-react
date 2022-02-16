@@ -1,6 +1,7 @@
 import React from 'react';
 import {v4} from 'uuid';
 import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
 
 function NewPostForm(props) {
 
@@ -32,6 +33,10 @@ function NewPostForm(props) {
     </React.Fragment>
   )
 }
+
+NewPostForm.propTypes = {
+  toggleFunc: PropTypes.func
+};
 
 NewPostForm = connect()(NewPostForm);
 
