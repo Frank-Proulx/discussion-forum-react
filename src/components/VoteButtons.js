@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import upArrow from '../img/upArrow.png'
+import downArrow from '../img/downArrow.png'
 
 function VoteButtons(props) {
 
@@ -16,32 +18,32 @@ function VoteButtons(props) {
 
   const voteButtonsStyles = {
     upvote: {
-      display: "inline",
-      fontWeight: "800",
-      fontSize: "2em",
-      color: "green"
+      display: "inline"
     },
     downvote: {
       display: "inline",
-      fontWeight: "800",
-      fontSize: "2em",
-      color: "red",
       marginRight: "2em"
     },
     p: {
       display: "inline",
-      fontSize: "2em"
+      position: "relative",
+      top: "7px",
+      fontSize: "2em",
+      margin: "auto"
+    },
+    img: {
+      margin: ".5em"
     }
   };
 
   return(
     <React.Fragment>
       <div style={voteButtonsStyles.upvote} onClick={() => voteIncrementer("up")}>
-        ٨
+        <img style={voteButtonsStyles.img} src={upArrow} alt="vote up" />
       </div>
       <p style={voteButtonsStyles.p}>{props.votes}</p>
       <div style={voteButtonsStyles.downvote} onClick={() => voteIncrementer("down")}>
-        ٧
+      <img style={voteButtonsStyles.img} src={downArrow} alt="vote up" />
       </div>
     </React.Fragment>
   )
