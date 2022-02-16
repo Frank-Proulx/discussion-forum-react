@@ -1,4 +1,5 @@
 import React from 'react';
+import {connect} from 'react-redux';
 
 function SortButton(props) {
 
@@ -15,5 +16,7 @@ function SortButton(props) {
     <button onClick={handleClick}>{props.sortMethod}</button>
   )
 }
+
+SortButton = connect()(SortButton);
 
 export default SortButton;

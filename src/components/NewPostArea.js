@@ -11,7 +11,7 @@ class NewPostArea extends React.Component {
     }
   }
 
-  toggleForm() {
+  toggleForm = () => {
     this.setState(prevState => ({
       showForm: !prevState.showForm
     }));

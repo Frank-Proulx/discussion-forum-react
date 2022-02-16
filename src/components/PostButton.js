@@ -3,7 +3,7 @@ import React from 'react';
 function PostButton(props) {
 
   return (
-    <button onClick={props.toggleFunc}>Post</button>
+    <button onClick={props.toggleFunc}>New Post</button>
   )
 }
 

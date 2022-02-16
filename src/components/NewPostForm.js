@@ -1,5 +1,6 @@
 import React from 'react';
 import {v4} from 'uuid';
+import {connect} from 'react-redux';
 
 function NewPostForm(props) {
 
@@ -26,9 +27,12 @@ function NewPostForm(props) {
         <textarea name="content" placeholder="type your post here..." required />
         <br/>
         <button type="submit">Submit Post!</button>
+        <button type="button" onClick={props.toggleFunc}>Cancel</button>
       </form>
     </React.Fragment>
   )
 }
+
+NewPostForm = connect()(NewPostForm);
 
 export default NewPostForm;

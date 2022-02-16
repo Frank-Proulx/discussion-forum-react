@@ -8,6 +8,7 @@ function DisplayPane(props) {
   return(
     <React.Fragment>
       <NewPostArea/>
+      <hr/>
       {props.posts.map(p => 
         <Post post={p}
           key={v4()} />
@@ -20,16 +21,16 @@ const sortPosts = (posts, sortMethod) => {
   let compareFunc = null;
   switch (sortMethod) {
     case "Hated":
-      compareFunc = (obj1, obj2) => (obj1.votes > obj2.votes) ? -1 : 1;
-      break;
-    case "Popular":
       compareFunc = (obj1, obj2) => (obj1.votes < obj2.votes) ? -1 : 1;
       break;
+    case "Popular":
+      compareFunc = (obj1, obj2) => (obj1.votes > obj2.votes) ? -1 : 1;
+      break;
     case "Oldest":
-      compareFunc = (obj1, obj2) => (obj1.timestamp.getTime() > obj2.timestamp.getTime()) ? -1 : 1;
+      compareFunc = (obj1, obj2) => (obj1.timestamp.getTime() < obj2.timestamp.getTime()) ? -1 : 1;
       break;
     case "Newest":
-      compareFunc = (obj1, obj2) => (obj1.timestamp.getTime() < obj2.timestamp.getTime()) ? -1 : 1;
+      compareFunc = (obj1, obj2) => (obj1.timestamp.getTime() > obj2.timestamp.getTime()) ? -1 : 1;
       break;
     }
   return Object.values(posts).sort(compareFunc);

@@ -1,22 +1,9 @@
 export default (state = {}, action) => {
+  const {id, title, timestamp, votes, content, sortMethod} = action;
   switch (action.type) {
     case "ADD_POST":
-      const {id, title, timestamp, votes, content} = action;
-      // const newPosts = Object.assign({}, state.posts, {
-      //   [id]: {
-      //     id: id,
-      //     title: title,
-      //     timestamp: timestamp,
-      //     votes: votes,
-      //     content: content
-      //   }
-      // });
-      // return Object.assign({}, state, {
-      //   posts: newPosts
-      // });
-
       return Object.assign({}, state, {
-        posts: { 
+        posts: { ...state.posts,
           [id]: {
             id: id,
             title: title,
@@ -25,17 +12,27 @@ export default (state = {}, action) => {
             content: content
           }
         }
-      })
+      });
     case "UPDATE_SORT_METHOD":
-      const {sortMethod} = action;
       return Object.assign({}, state, {
         sortMethod: sortMethod
-      });
-      
+      });   
     case "UPVOTE_POST":
-      break;
+      return Object.assign({}, state, {
+        posts: { ...state.posts,
+          [id]: { ...state.posts[id],
+            votes: state.posts[id].votes + 1
+          }
+        }
+      });
     case "DOWNVOTE_POST":
-      break;
+      return Object.assign({}, state, {
+        posts: { ...state.posts,
+          [id]: { ...state.posts[id],
+            votes: state.posts[id].votes - 1
+          }
+        }
+      });
     default:
       return {posts: {}, sortMethod: "Popular"};
   }
