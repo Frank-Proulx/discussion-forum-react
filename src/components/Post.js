@@ -6,14 +6,18 @@ import PropTypes from 'prop-types';
 function Post(props) {
 
   const postStyle = {
-    border: "1px solid grey",
-    h2: {
-      display: "inline"
+    border: "2px solid grey",
+    borderTop: ".1px solid grey",
+    borderBottom: ".1px solid grey",
+    h3: {
+      display: "inline",
+      marginBottom: "0"
     },
     timestamp: {
       display: "inline",
       marginRight: "2em",
       fontStyle: "italic",
+      fontSize: ".7em",
       marginBottom: "0"
     },
     postBody: {
@@ -33,8 +37,8 @@ function Post(props) {
       <div style={postStyle}>
         <VoteButtons postId={props.post.id}
           votes={props.post.votes} />
-        <h2 style={postStyle.h2}>{props.post.title}</h2>
-        <p style={postStyle.timestamp}> - {timestamp}</p>
+        <h3 style={postStyle.h3}>{props.post.title}</h3>
+        <p style={postStyle.timestamp}> {timestamp}</p>
         <ReadHideButton detailsVisible={props.detailMode}
           clickFunc={() => props.toggleDetailFunc(props.post.id)} />
         {content}

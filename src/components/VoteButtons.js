@@ -19,7 +19,7 @@ function VoteButtons(props) {
     },
     downvote: {
       display: "inline",
-      marginRight: "2em"
+      marginRight: "1em"
     },
     votes: {
       display: "inline",
@@ -31,7 +31,8 @@ function VoteButtons(props) {
     img: {
       margin: ".5em",
       height: "25px",
-      width: "25px"
+      width: "25px",
+      border: "2px solid grey"
     }
   };
 

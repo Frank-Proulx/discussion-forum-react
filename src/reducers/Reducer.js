@@ -1,7 +1,9 @@
+import * as c from './../actions/ActionTypes';
+
 export default (state = {}, action) => {
   const {id, title, timestamp, votes, content, sortMethod} = action;
   switch (action.type) {
-    case "ADD_POST":
+    case c.ADD_POST:
       return Object.assign({}, state, {
         posts: { ...state.posts,
           [id]: {
@@ -13,11 +15,11 @@ export default (state = {}, action) => {
           }
         }
       });
-    case "UPDATE_SORT_METHOD":
+    case c.UPDATE_SORT_METHOD:
       return Object.assign({}, state, {
         sortMethod: sortMethod
       });   
-    case "UPVOTE_POST":
+    case c.UPVOTE_POST:
       return Object.assign({}, state, {
         posts: { ...state.posts,
           [id]: { ...state.posts[id],
@@ -25,7 +27,7 @@ export default (state = {}, action) => {
           }
         }
       });
-    case "DOWNVOTE_POST":
+    case c.DOWNVOTE_POST:
       return Object.assign({}, state, {
         posts: { ...state.posts,
           [id]: { ...state.posts[id],
